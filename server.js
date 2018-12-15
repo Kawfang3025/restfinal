@@ -14,6 +14,7 @@ app.get('/', function (req, res) {
     });
 // CRUD PRODUCT
 app.get('/api/customer', db.getAllCustomers);
+app.get('/api/country', db.getCountry);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {

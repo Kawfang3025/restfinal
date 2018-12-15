@@ -18,7 +18,24 @@ function getAllCustomers(req, res) {
         })
 }
 
+function getCountry(req, res) {
+    db.any('select country COUNT(customer_id) from Customers group by country')
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ALL Customers'
+                });
+        })
+        .catch(function (error) {
+            console.log('ERROR:', error)
+        })
+}
+
+
 
 module.exports = {
     getAllCustomers,
+    getCountry
 };
