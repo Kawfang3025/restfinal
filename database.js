@@ -19,7 +19,7 @@ function getAllCustomers(req, res) {
 }
 
 function getCountry(req, res) {
-    db.any('select country,count(customer_id) from Customers group by country')
+    db.any('select country,count(customer_id)as"range" from Customers group by country')
         .then(function (data) {
             res.status(200)
                 .json({
