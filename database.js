@@ -37,5 +37,5 @@ function getCountry(req, res) {
 
 module.exports = {
     getAllCustomers,
-    getCountry
+    getCountry,
 };
